@@ -1,0 +1,50 @@
+- var web_title = "Beauty & All"
+- var loggedInUser = {name:"Mwero", role:"snr.dev"}
+doctype html 
+html 
+  head 
+    title= web_title
+    script(src="https://cdn.tailwindcss.com")
+    link(href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css")
+  body(class="mx-auto max-w-[1000px] mx-auto bg-red-400 text-white text-base") 
+    header(class="w-full rounded-lg px-12 py-8 bg-slate-300 text-blue-700 text-center") 
+      h1=  web_title 
+      -var links = ["home","about", "products", "blog"]
+      - var linkStyles = "m-2 px-6 py-2 bg-black rounded-lg text-white font-bold hover:underline hover:font-extrabold"
+      ul(class="flex gap-4 items-center ") 
+        li 
+          a(href="/", class=linkStyles) Home
+        li 
+          a(href="/about", class=linkStyles) About
+        li 
+          a(href="/products", class=linkStyles) Products
+
+    main 
+      if loggedInUser
+        h2= loggedInUser.name
+        p Welcome #{loggedInUser.role}
+      else 
+        h2 Invalid User
+
+      div(class="w-full bg-white text-black m-12")
+        ul 
+          li 
+              h2 Students Details
+        each learner in students 
+          li 
+            h3=learner.name 
+            p=learner.age
+            img(src=learner.img, alt=learner.name, width="200px")
+    footer
+      ul(class="w-[200px flex flex-col justify-between]") 
+        each linkItem in links 
+          li(class=linkStyles) 
+            a(href=linkItem==="home"?"/":linkItem) #{`${linkItem[0].toUpperCase()}${linkItem.substr(1)}`} 
+ 
+      div 
+        p(class="w-full flex gap-4")
+          span(class="fas fas-phone") Link !
+          span(class="fa fa-phone") Link 2
+
+
+  
