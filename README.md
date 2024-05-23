@@ -50,7 +50,8 @@ my-express-app
 ├── node_modules       # Directory where all the npm packages are installed
 ├── public             # Static files (CSS, JavaScript, images)
 ├── routes
-│   └── index.js       # Application routes
+│   ├── index.js       # Application routes
+│   └── users.js       # User-specific routes
 ├── views
 │   ├── error.pug      # Error page template
 │   └── index.pug      # Main page template
@@ -58,6 +59,60 @@ my-express-app
 ├── package.json       # Project metadata and dependencies
 └── README.md          # Project documentation
 ```
+
+## Routes / API Endpoints
+
+The application provides the following CRUD routes:
+
+### Root Route
+
+- **/** 
+  - Method: `GET`
+  - Description: Home page of the application.
+
+### Students Routes
+
+- **/students**
+  - Method: `GET`
+  - Description: Retrieve a list of students.
+
+- **/students**
+  - Method: `POST`
+  - Description: Create a new student.
+
+- **/students/:id**
+  - Method: `GET`
+  - Description: Retrieve details of a specific student by ID.
+
+- **/students/:id**
+  - Method: `PUT`
+  - Description: Update details of a specific student by ID.
+
+- **/students/:id**
+  - Method: `DELETE`
+  - Description: Delete a specific student by ID.
+
+### Users Routes
+
+- **/users**
+  - Method: `GET`
+  - Description: Retrieve a list of users.
+
+- **/users**
+  - Method: `POST`
+  - Description: Create a new user.
+
+- **/users/:id**
+  - Method: `GET`
+  - Description: Retrieve details of a specific user by ID.
+
+- **/users/:id**
+  - Method: `PUT`
+  - Description: Update details of a specific user by ID.
+
+- **/users/:id**
+  - Method: `DELETE`
+  - Description: Delete a specific user by ID.
 
 ## License
 
